@@ -1,0 +1,21 @@
+<view>
+  <SearchInput></SearchInput>
+  <Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+    <block wx:if="{{tabs[0].isActive}}">
+      <view class="first_tab" wx:for="{{goodsList}}" wx:key="goods_id">
+        <navigator class="goods_item" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
+          <view class="goods_item_image">
+            <image mode="widthFix" src="{{item.goods_small_logo || 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1596173294&di=feb521b9bb96a6e4e21f305d39ef78f4&src=http://img.qqzhi.com/uploads/2019-01-31/053142481.jpg'}}"></image>
+          </view>
+          <view class="goods_item_content">
+            <view class="goods_name">{{item.goods_name}}</view>
+            <view class="goods_price">￥{{item.goods_price}}</view>
+          </view>
+        </navigator>
+      </view>
+    </block>
+    <block wx:elif="{{tabs[1].isActive}}">1</block>
+    <block wx:elif="{{tabs[2].isActive}}">2</block>
+  </Tabs>
+</view>
+  
